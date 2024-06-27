@@ -5,7 +5,14 @@ import {ProductsScreen} from '../screens/products/ProductsScreen';
 import {SettingsScreen} from '../screens/settings/SettingsScreen';
 import {ProductDetailsScreen} from '../screens/productDetails/ProductDetailsScreen';
 
-const Stack = createStackNavigator();
+export type RootStackParams = {
+  Home: undefined;
+  ProductDetail: {id: number; name: string};
+  Products: undefined;
+  Settings: undefined;
+};
+
+const Stack = createStackNavigator<RootStackParams>();
 
 export const StackNavigator = () => {
   return (
@@ -13,7 +20,7 @@ export const StackNavigator = () => {
       screenOptions={{
         headerStyle: {
           elevation: 0,
-          // shadowColor: 'tras'
+          shadowColor: 'transparent',
         },
       }}>
       <Stack.Screen name="Home" component={HomeScreen} />
