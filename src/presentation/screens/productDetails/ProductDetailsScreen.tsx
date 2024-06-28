@@ -14,7 +14,6 @@ export const ProductDetailsScreen = () => {
     });
   }, []);
 
-  console.log(params);
   return (
     <View style={globalStyles.container}>
       <Text>Detalle de producto</Text>
